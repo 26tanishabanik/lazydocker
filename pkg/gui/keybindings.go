@@ -488,6 +488,13 @@ func (gui *Gui) GetInitialKeybindings() []*Binding {
 			Handler:     wrappedHandler(gui.prevScreenMode),
 			Description: gui.Tr.LcPrevScreenMode,
 		},
+		{
+			ViewName: "main",
+			Key:      gocui.KeyCtrlL,
+			Modifier: gocui.ModNone,
+			Handler:  wrappedHandler(gui.handleClearMain),
+			Description: gui.Tr.ClearMain,
+		},
 	}
 
 	for _, panel := range gui.allSidePanels() {
