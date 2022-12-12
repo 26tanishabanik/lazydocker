@@ -73,6 +73,13 @@ type panelStates struct {
 	Main *mainPanelState
 }
 
+type imagePanelState struct {
+	SelectedLine  int
+	ContextIndex  int    // for specifying if you are looking at logs/stats/config/etc
+	SortBy        string // One of "default", "name", "tag", "size"
+	SortAscending bool   // ignored when SortBy is 'default'
+}
+
 type guiState struct {
 	// the names of views in the current focus stack (last item is the current view)
 	ViewStack        []string
